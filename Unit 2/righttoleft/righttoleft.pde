@@ -8,7 +8,7 @@ void setup()  {
 
 void draw()  {
   background(255);
-  ellipse(150, x, 150, 150);
+  ellipse(x, 150, 150, 150);
   x = x + 5;  
   if (x > 400) {
     x = -100;
