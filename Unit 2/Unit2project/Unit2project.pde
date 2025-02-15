@@ -7,7 +7,14 @@ int x;
 
 
 
-size(800, 600);
+void setup()  {
+  x = 210;
+  size(800, 600);
+
+} //---end of setup---
+
+void draw()  {
+
 
 //background
 fill(#80ffdb);
@@ -69,8 +76,10 @@ fill(#64B2E3);
 stroke(#64B2E3);
 rect(0, 200, 800, 100);
 
+fill(#BADDF2);
 stroke(#BADDF2);
-rect(0, 200, 20, 5);
+rect(x, 200, 30, 1);
+
 
 //train
 fill(#603808);
@@ -116,3 +125,5 @@ rect(0, 485, 800, 50);
 fill(#432818);
 stroke(#432818);
 rect(0, 535, 800, 100);
+
+}
