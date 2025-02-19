@@ -4,10 +4,17 @@
 
 //variables
 float angle;
+float clouds;
+int cloudX;
+int cloudY;
+int cloudZ;
+int cloudE;
+
 
 void setup() {
   size(800, 600);
   angle = 0;
+  clouds = 0;
 }//end
 
 void draw() {
@@ -56,19 +63,35 @@ void draw() {
   fill(#FFCB47);
   stroke(#FFCB47);
   sun(430, 700);
-  angle = angle - 0.003;
+  angle = angle - 0.001;
   
-  clouds
+ 
 
   //clouds
-  fill(#FFFFFF);
-  stroke(#FFFFFF);
-  ellipse(100, 175, 150, 50);
-  ellipse(140, 170, 50, 50);
-  rect(50, 175, 140, 25, 100);
-  ellipse(80, 150, 100, 100);
-  rect(200, 100, 280, 30, 200);
  
+  clouds1(cloudX, 0);
+  cloudX = cloudX + 1;
+  if (cloudX > 800) {
+  cloudX = -400;
+  }
+  
+   clouds2(cloudY, 0);
+  cloudY = cloudY + 2;
+  if (cloudY > 800) {
+  cloudY = -100;
+  }
+  
+    clouds3(cloudZ, 0);
+  cloudZ = cloudZ + 2;
+  if (cloudZ > 800) {
+  cloudZ = -100;
+  }
+ 
+   clouds4(cloudE, 0);
+  cloudE = cloudE + 2;
+  if (cloudE > 800) {
+  cloudE = -100;
+  }
 
   //ocean
   fill(#64B2E3);
@@ -136,3 +159,41 @@ void draw() {
   popMatrix();
   
 }
+
+void clouds1(int x, int y)  {
+  pushMatrix();
+  translate(x, y);
+   fill(#FFFFFF);
+  stroke(#FFFFFF);
+  ellipse(100, 175, 150, 50);
+  ellipse(140, 170, 50, 50);
+  rect(50, 175, 140, 25, 100);
+  ellipse(80, 150, 100, 100);
+   popMatrix();
+}
+ 
+ void clouds2(int x, int y)  {
+  pushMatrix();
+   translate(x, y);
+ rect(180, 40, 100, 30, 50);
+ ellipse(220, 40, 50, 20);
+ rect(230, 50, 100, 20, 50);
+ 
+  void clouds3(int x, int y)  {
+  pushMatrix();
+   translate(x, y);
+  ellipse(400, 125, 40, 30);
+  rect(380, 125, 50, 20, 50);
+  popMatrix();
+  }
+  
+ void clouds4(int x, int y)  {
+  pushMatrix();
+ rect(630, 70, 100, 20, 50);
+  
+  ellipse(600, 150, 50, 30);
+  ellipse(640, 150, 50, 40);
+  rect(580, 150, 100, 20, 50);
+  popMatrix();
+  }
+  
